@@ -1,0 +1,113 @@
+.logo-size {
+  max-height: 150px;
+  max-width: 200px;
+  width: 150px;
+  height: 70px;
+}
+
+.searchbar-margin {
+  height: 10px;
+  width: 1500px;
+  /* margin-left: 100px; */
+  /* margin-right: 100px; */
+  border-radius: 15px 50px;
+  background:whitesmoke;
+  padding: 20px; 
+
+}
+
+.button-group {
+  width: 1000px;
+  margin-left: 100px;
+  margin-top: 20px
+}
+
+.cart-sizing {
+  height: 40px;
+  width: 45px;
+  margin-left: 100px;
+  margin-right: 100px;  
+  margin-top: 15px
+}
+
+.cart {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  font-size: 50px;
+}
+
+/* .button-margination {
+  margin-left: 400px;
+  position: relative;
+  background-color: #4caf50;
+  border: none;
+  font-size: 28px;
+  color: #ffffff;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button-margination:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.button-margination:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+} */
+
+/* .gradient {
+  background-image: linear-gradient(to right, black, rgb(129, 128, 46));
+} */
+
+.button {
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.kategori {
+  margin-left: 100px;
+  margin-top: 10px;
+  color: #f0c75f;
+  font-size: 20px;
+}
+
+.logo-margin {
+  border-radius: 15px 50px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
