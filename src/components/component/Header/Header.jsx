@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { onLogoutUser} from '../../../redux/action/authentication'
+import { onLogoutUser } from '../../../redux/action/authentication'
 import { filterMenu } from '../../../redux/action/search'
 import {
     Button,
@@ -62,8 +62,10 @@ class Header extends Component {
                             <Input value={this.state.keyword} onChange={e => this.setState({ keyword: e.target.value })} className="searchbar-margin" type="text" placeholder="Cari disini..."></Input>
                             <Button onClick={this.onSearchSubmit} className="mr-5 ml-5" style={{ backgroundColor: '#f0c75f' }} color="warning">Search</Button>
                         </ButtonGroup>
-                        <NavLink className="cart-sizing" to='/cart'>
-                            <i className="fas fa-shopping-cart" style={{ color: 'white', backgroundColor: '#0a0c07', marginRight: '50px', fontSize: '25px' }}></i>
+                        <NavLink className="mb-3 cart-sizing" to='/cart'>
+                            <Button className="button-outline" style={{ backgroundColor: '#0a0c07', width: "55px" }}>
+                                <i className="fas fa-shopping-cart" style={{ color: 'white', backgroundColor: '#0a0c07', marginRight: '50px', fontSize: '25px' }}></i>
+                            </Button>
                         </NavLink>
                         {/* <NavLink to='/'>
                             <Button className="button-margination" style={{ backgroundColor: 'rgb(129, 128, 46)' }}>
@@ -107,8 +109,10 @@ class Header extends Component {
                                 <Input value={this.state.keyword} onChange={e => this.setState({ keyword: e.target.value })} className="searchbar-margin" type="text" placeholder="Cari disini..."></Input>
                                 <Button onClick={this.onSearchSubmit} className="mr-5 ml-5" style={{ backgroundColor: '#f0c75f' }} color="warning">Search</Button>
                             </ButtonGroup>
-                            <NavLink className="cart-sizing" to='/cart'>
-                                <i className="fas fa-shopping-cart" style={{ color: 'white', backgroundColor: '#0a0c07', fontSize: '25px' }}></i>
+                            <NavLink className="mb-3 cart-sizing" to='/cart'>
+                                <Button className="button" style={{ backgroundColor: '#0a0c07', width: "85px" }}>
+                                    <i className="fas fa-shopping-cart" style={{ color: 'white', backgroundColor: '#0a0c07', fontSize: '25px' }}></i>
+                                </Button>
                             </NavLink>
                             <NavbarToggler onClick={this.toggle} />
                             <Collapse isOpen={this.state.isOpen} navbar>
@@ -151,8 +155,10 @@ class Header extends Component {
                                 <Input value={this.state.keyword} onChange={e => this.setState({ keyword: e.target.value })} className="searchbar-margin" type="text" placeholder="Cari disini..."></Input>
                                 <Button onClick={this.onSearchSubmit} className="mr-5 ml-5" style={{ backgroundColor: '#f0c75f' }} color="warning">Search</Button>
                             </ButtonGroup>
-                            <NavLink className="cart-sizing" to='/cart'>
-                                <i className="fas fa-shopping-cart" style={{ color: 'white', backgroundColor: '#0a0c07', fontSize: '25px' }}></i>
+                            <NavLink className="mb-3 cart-sizing" to='/cart'>
+                                <Button className="button" style={{ backgroundColor: '#0a0c07', width: "85px" }}>
+                                    <i className="fas fa-shopping-cart" style={{ color: 'white', backgroundColor: '#0a0c07', fontSize: '25px' }}></i>
+                                </Button>
                             </NavLink>
                             <NavbarToggler onClick={this.toggle} />
                             <Collapse isOpen={this.state.isOpen} navbar>

@@ -151,9 +151,9 @@ class Checkout extends Component {
                         <div style={{ marginLeft: '750px' }} className="row mt-5">
                             <div className="col-4">
                                 <input type="file" ref="fileBtn" className="d-none" onChange={e => this.showFileName(e)} />
-                                <input type="button" onClick={() => this.refs.fileBtn.click()} value="Unggah bukti pembahyaran Anda" className="btn btn-primary" />
-                                <img className="mt-5" style={{ width: '500px' }} src={this.state.ubahKeGambar} alt="" />
-                                <input type="button" href="/" onClick={this.onSubmitBukti} value="Kirim" className="btn btn-success mt-5" />
+                                <input type="button" onClick={() => this.refs.fileBtn.click()} value="Unggah bukti pembayaran Anda" className="btn btn-primary" />
+                                <img className="my-5" style={{ width: '500px' }} src={this.state.ubahKeGambar} alt="" />
+                                <input type="button" href="/" onClick={this.onSubmitBukti} value="Kirim" className="btn btn-success" />
                             </div>
                         </div>
                     </div>

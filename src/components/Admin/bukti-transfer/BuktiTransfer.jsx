@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
-import { Button } from 'reactstrap'
+import {
+    Card, Button, CardHeader, CardFooter, CardBody,
+    CardTitle, CardText
+} from 'reactstrap'
+import '../bukti-transfer/BuktiTransfer.css'
 
 class BuktiTransfer extends Component {
     state = {
@@ -46,20 +50,40 @@ class BuktiTransfer extends Component {
             // console.log(bukti);
 
             return (
-                <tr>
-                    <td>{bukti.transactionID}</td>
-                    <td>{bukti.userID}</td>
-                    <td>{bukti.totalHarga}</td>
-                    <td>{bukti.date}</td>
-                    <td>{bukti.status ? 'Done' : 'Pending'}</td>
-                    <td>
-                        <img style={{ width: '300px', width: '300px' }} src={'http://localhost:5000/bukti/' + bukti.bukti} />
-                    </td>
-                    <td>{this.confirmButton(bukti.userID, bukti.status)}</td>
-                    <td>
-                        <Button onClick={() => this.deleteConfirm(bukti.transactionID)} >Hapus bukti transfer</Button>
-                    </td>
-                </tr>
+                <Card id="list-bukti" className="container col-3 mx-5 my-5">
+                    <CardHeader>
+                        <h2>ID Transaksi : {bukti.transactionID}</h2>
+                    </CardHeader>
+                    <CardBody>
+                        <CardTitle>
+                            <img style={{ width: '500px', width: '300px' }} src={'http://localhost:5000/bukti/' + bukti.bukti} />
+                        </CardTitle>
+                        <CardText>
+                            <h4>ID User : {bukti.userID}</h4>
+                            <h4>Total harga : {bukti.totalHarga}</h4>
+                            <h4>Tanggal upload bukti transfer : {bukti.userID}</h4>
+                            <h4>Status : {bukti.status ? 'Done' : 'Pending'} {this.confirmButton(bukti.userID, bukti.status)}</h4>
+
+                        </CardText>
+                    </CardBody>
+                    <CardFooter>
+                        <Button onClick={() => this.deleteConfirm(bukti.transactionID)} className='btn btn-danger btn-block'>Hapus bukti transfer</Button>
+                    </CardFooter>
+                </Card>
+                // <tr>
+                //     <td>{bukti.transactionID}</td>
+                //     <td>{bukti.userID}</td>
+                //     <td>{bukti.totalHarga}</td>
+                //     <td>{bukti.date}</td>
+                //     <td>{bukti.status ? 'Done' : 'Pending'}</td>
+                //     <td>
+                //         <img style={{ width: '300px', width: '300px' }} src={'http://localhost:5000/bukti/' + bukti.bukti} />
+                //     </td>
+                //     <td>{this.confirmButton(bukti.userID, bukti.status)}</td>
+                //     <td>
+                //         <Button onClick={() => this.deleteConfirm(bukti.transactionID)} >Hapus bukti transfer</Button>
+                //     </td>
+                // </tr>
             )
 
         })
@@ -113,9 +137,13 @@ class BuktiTransfer extends Component {
     render() {
         if (this.props.user_role === 'admin') {
             return (
+
                 <div>
-                    <h1 className='display-4 text-center'>Bukti transfer users :</h1>
-                    <table className='table text-center'>
+                    <h1 className='display-4 text-center' style={{ fontStyle: 'italic', fontFamily: 'fantasy' }}>BUKTI TRANSFER PEMBELI BAKMI BUN :</h1>
+                    <div className="ml-5 row">
+                        {this.renderBukti()}
+                        {/* <h1 className='display-4 text-center'>Bukti transfer users :</h1>
+                    <table className='table text-center container'>
                         <thead>
                             <tr>
                                 <th>ID transaksi</th>
@@ -131,8 +159,9 @@ class BuktiTransfer extends Component {
                         <tbody>
                             {this.renderBukti()}
                         </tbody>
-                    </table>
+                    </table> */}
 
+                    </div>
                 </div>
             )
         } else {

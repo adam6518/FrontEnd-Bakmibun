@@ -99,6 +99,10 @@ class ProductItem extends Component {
         }
     }
 
+    notLogin = () => {
+        Swal.fire('Anda belum login', 'Silahkan login terlebih dahulu !', 'warning')
+    }
+
     render() {
         // if (this.state.redirect) {
         //     return <Redirect to='/' />
@@ -107,7 +111,7 @@ class ProductItem extends Component {
         let { productID, image, price, description, name } = this.props.barang
 
         return (
-            <div className='card mt-5' id="shadow">
+            <div className='card mt-5 mx-2' id="shadow">
                 <Card className="mx-auto">
                     <CardImg style={{ width: '246px', height: '200px' }} top width="100%" src={'http://localhost:5000/' + image} alt={productID} />
                     <CardBody>
@@ -120,23 +124,44 @@ class ProductItem extends Component {
                             <Popover placement="bottom" isOpen={this.state.popoverOpen} target={name.split(' ').join('')} toggle={this.toggle}>
                                 <PopoverHeader>{name}</PopoverHeader>
                                 <PopoverBody>
-                                    <span>{description}</span>
+                                    <h4><span>{description}</span></h4>
                                     <h6>Klik lagi untuk menutup deskripsi</h6>
                                 </PopoverBody>
                             </Popover>
                         </div>
-                        <div className="mt-2">
-                            {/* <Input onChange={e => this.setState({qty: e.target.value})} className="text-center" placeholder="Jumlah pesanan Anda"/> */}
-                            <Button onClick={this.handleMinus} className="ml-2 mr-2">-</Button>
-                            <span>{this.state.qty}</span>
-                            <Button onClick={this.handlePlus} className="ml-2 mr-2">+</Button>
+                        {
+                            this.props.user_id ?
+                                <div className="mt-2">
+                                    {/* <Input onChange={e => this.setState({qty: e.target.value})} className="text-center" placeholder="Jumlah pesanan Anda"/> */}
+                                    <Button onClick={this.handleMinus} className="ml-2 mr-2">-</Button>
+                                    <span>{this.state.qty}</span>
+                                    <Button onClick={this.handlePlus} className="ml-2 mr-2">+</Button>
 
-                            <div className="mt-2">
-                                <Button onClick={this.postToCart} className="btn btn-outline" style={{ color: 'white', backgroundColor: '#050505' }}>Order</Button>
-                            </div>
+                                    <div className="mt-2">
+                                        <Button onClick={this.postToCart} className="btn btn-outline" style={{ color: 'white', backgroundColor: '#050505' }}>Order</Button>
+                                    </div>
 
 
-                        </div>
+                                </div> :
+                                <div className="mt-2">
+                                    {/* <Input onChange={e => this.setState({qty: e.target.value})} className="text-center" placeholder="Jumlah pesanan Anda"/> */}
+                                    <a href='/login'>
+                                        <Button onClick={this.notLogin} className="ml-2 mr-2">-</Button>
+                                    </a>
+                                    <span>{this.state.qty}</span>
+                                    <a href='/login'>
+                                        <Button onClick={this.notLogin} className="ml-2 mr-2">+</Button>
+                                    </a>
+
+                                    <div className="mt-2">
+                                        <a href='/login'>
+                                            <Button onClick={this.notLogin} className="btn btn-outline" style={{ color: 'white', backgroundColor: '#050505' }}>Order</Button>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                        }
                     </CardBody>
                 </Card>
             </div>

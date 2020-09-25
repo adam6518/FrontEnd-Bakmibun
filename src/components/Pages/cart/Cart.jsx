@@ -3,6 +3,11 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import Modals from '../../component/modals/Modals'
+import {
+    Card, Button, CardHeader, CardFooter, CardBody,
+    CardTitle, CardText
+} from 'reactstrap';
+import '../cart/Cart.css'
 
 class Cart extends Component {
 
@@ -58,17 +63,37 @@ class Cart extends Component {
                 // console.log(cart);
 
                 return (
-                    <tr>
-                        <td>{cart.productID}</td>
-                        <td>{cart.name}</td>
-                        <td>{cart.description}</td>
-                        <td>{cart.price}</td>
-                        <img style={{ width: '100px' }} src={'http://localhost:5000/' + cart.image} />
-                        <td>{cart.jumlah}</td>
-                        <td>
-                            <button onClick={() => { this.deleteItems(cart.cartID) }} className='btn btn-warning'>Delete</button>
-                        </td>
-                    </tr>
+                    <Card id="cart-list" className="container col-3 mx-5 my-5">
+                        <CardHeader>
+                            <h1>{cart.name}</h1>
+                        </CardHeader>
+                        <CardBody>
+                            <CardTitle>
+                                <img style={{ width: '400px', height: '200px' }} src={'http://localhost:5000/' + cart.image} />
+                            </CardTitle>
+                            <CardText>
+                                <h4>ID Product : {cart.productID}</h4>
+                                <h4>Jumlah     : {cart.jumlah}</h4>
+                                <h4>Harga      : {cart.price}</h4>
+                                <h4>Deskripsi  : {cart.description}</h4>
+                            </CardText>
+
+                        </CardBody>
+                        <CardFooter>
+                            <button onClick={() => { this.deleteItems(cart.cartID) }} className='btn btn-warning btn-block'>Delete</button>
+                        </CardFooter>
+                    </Card>
+                    // <tr>
+                    //     <td>{cart.productID}</td>
+                    //     <td>{cart.name}</td>
+                    //     <td>{cart.description}</td>
+                    //     <td>{cart.price}</td>
+                    //     <img style={{ width: '100px' }} src={'http://localhost:5000/' + cart.image} />
+                    //     <td>{cart.jumlah}</td>
+                    //     <td>
+                    //         <button onClick={() => { this.deleteItems(cart.cartID) }} className='btn btn-warning'>Delete</button>
+                    //     </td>
+                    // </tr>
                 )
             })
         } else {
@@ -81,8 +106,11 @@ class Cart extends Component {
 
             return (
                 <div>
-                    <h1 className='display-4 text-center'>List belanja Anda :</h1>
-                    <table className='table text-center'>
+                    <h1 className='display-4 text-center' style={{ fontStyle: 'italic', fontFamily: 'initial' }}>LIST BELANJAKU :</h1>
+                    <div className="ml-5 row">
+                        {this.renderList()}
+                    </div>
+                    {/* <table className='table text-center'>
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -96,15 +124,18 @@ class Cart extends Component {
                         <tbody>
                             {this.renderList()}
                         </tbody>
-                    </table>
+                    </table> */}
                     {
                         this.state.carts.length > 0 ?
-                            <div className='text-center'>
+                            <div className='text-center mt-5'>
                                 <Modals />
                             </div>
                             :
                             <div className="text-center">
-                                <h1>Cart Anda masih kosong, belanja dulu yuk !</h1>
+                                <h1 className="my-5">Cart Anda masih kosong, belanja dulu yuk !</h1>
+                                <a href='/'>
+                                    <Button className="btn btn-success">Kembali ke Home Page</Button>
+                                </a>
                             </div>
                     }
 

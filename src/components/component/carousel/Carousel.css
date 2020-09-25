@@ -1,6 +1,6 @@
 .image-sizing {
-    object-fit: cover;
-    width: 1500px;
+    object-fit: initial;
+    width: 1700px;
     height: 500px;
     margin-top:30px;
 }

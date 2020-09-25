@@ -18,6 +18,10 @@ const initSearch = {
     keyword: ''
 }
 
+const initbadge = {
+    badge: 0
+}
+
 const AuthReducer = (state = init, action) => {
     switch (action.type) {
         case 'LOGIN_SUCCESS':

@@ -64,7 +64,7 @@ class ManageUsers extends Component {
     renderUsers = () => {
         return this.state.users.map((user) => {
             return (
-                <div className="row col-11 ml-5 mt-5" >
+                <div className="container col-4 mt-5" >
                     <Card body inverse color="info">
                         <CardHeader style={{ fontWeight: 'bolder' }}>Profile {user.username}</CardHeader>
                         <CardBody>
@@ -89,12 +89,15 @@ class ManageUsers extends Component {
         if (this.props.user_role === 'admin') {
             return (
                 <div>
-                    <h1 className='display-4 text-center'>Our customers data</h1>
+                    <h1 className='display-4 text-center' style={{ fontStyle: 'italic', fontFamily: 'cursive' }}>DATA USER</h1>
                     <ButtonGroup className="button-group">
                         <Input onChange={e => this.setState({ input: e.target.value })} style={{ width: '900px' }} placeholder="Cari username customer..." />
                         <Button onClick={this.searchUers}>Search</Button>
+                        <a href='/manageusers'>
+                            <Button className="btn-danger ml-3">Reset</Button>
+                        </a>
                     </ButtonGroup>
-                    <div className="row ml-5">
+                    <div className="row mx-5">
                         {this.renderUsers()}
                     </div>
                 </div>

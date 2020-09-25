@@ -20,36 +20,24 @@ class MyProfile extends Component {
                     <Form className="mt-5">
                         <FormGroup>
                             <Label>Username : <h6>{this.props.user_name}</h6></Label>
-                            <br />
-                            <Link className="change">Ganti</Link>
                         </FormGroup>
                         <FormGroup>
                             <Label>Password : <h6>{this.props.pass_word}</h6></Label>
-                            <br />
-                            <Link className="change">Ganti</Link>
                         </FormGroup>
                         <FormGroup>
                             <Label>Email : <h6>{this.props.e_mail}</h6></Label>
                         </FormGroup>
                         <FormGroup>
                             <Label>Phone : <h6>{this.props.ph_one}</h6></Label>
-                            <br />
-                            <Link className="change">Ganti</Link>
                         </FormGroup>
                         <FormGroup>
                             <Label>Alamat : <h6>{this.props.ala_mat}</h6></Label>
-                            <br />
-                            <Link className="change">Ganti</Link>
                         </FormGroup>
                         <FormGroup>
                             <Label>Kota : <h6>{this.props.ko_ta}</h6></Label>
-                            <br />
-                            <Link className="change">Ganti</Link>
                         </FormGroup>
                         <FormGroup>
                             <Label>Kode pos : <h6>{this.props.kode_pos}</h6></Label>
-                            <br />
-                            <Link className="change">Ganti</Link>
                         </FormGroup>
                     </Form>
                 </div>

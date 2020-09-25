@@ -102,17 +102,17 @@ class Home extends Component {
         console.log(this.state.products)
         console.log(this.props.key_word)
         return (
-            <div className="row">
+            <div id="background" className="row">
                 <div className="col-2" >
                     <ButtonGroup className="side-menu" vertical>
-                        <Button onClick={this.getData} style={{ fontSize: '30px', backgroundColor: '#0a0c07' }}>Semua menu</Button>
-                        <Button onClick={this.getMakanan} style={{ fontSize: '50px', backgroundColor: '#0a0c07' }}>Makanan</Button>
-                        <Button onClick={this.getMinuman} style={{ fontSize: '50px', backgroundColor: '#0a0c07' }}>Minuman</Button>
-                        <Button onClick={this.getEs} style={{ fontSize: '50px', backgroundColor: '#0a0c07' }}>Es</Button>
+                        <Button className="rounded-pill" onClick={this.getData} style={{ fontSize: '30px', backgroundColor: '#0a0c07' }}>Semua menu</Button>
+                        <Button className="rounded-pill" onClick={this.getMakanan} style={{ fontSize: '50px', backgroundColor: '#0a0c07' }}>Makanan</Button>
+                        <Button className="rounded-pill" onClick={this.getMinuman} style={{ fontSize: '50px', backgroundColor: '#0a0c07' }}>Minuman</Button>
+                        <Button className="rounded-pill" onClick={this.getEs} style={{ fontSize: '50px', backgroundColor: '#0a0c07' }}>Es</Button>
                     </ButtonGroup>
                 </div>
-                <div className="container col-10">
-                    <div className="karosel">
+                <div id="karosel" className="container col-10 mt-4">
+                    <div className="karosel rounded">
                         <Carousel />
                     </div>
 
